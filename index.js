@@ -15,3 +15,13 @@ app.use(express.urlencoded({ extended: true}));
 // this puts the notes in a url that ends in /notes. I think?? 
 app.use('/notes', notes);
 app.use(express.static('public'));
+
+// From the README: 
+
+// GET /notes shoudl return the notes.html file
+// GET * should return the index.html file
+
+// The following API routes should be created: 
+
+// GET /api/notes should read the db.json file and return all  saved notes as JSON
+// POST /api/notes should rec a new note to save on the req body, add to the db.json file, and return the new note to client ***each note needs a unique id when saved (there are npm pkgs for this??)
