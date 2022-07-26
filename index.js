@@ -13,13 +13,20 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 
 // this puts the notes in a url that ends in /notes. I think?? 
-app.use('/notes', notes);
+// app.use('/notes', notes); <~~throws an error??
 app.use(express.static('public'));
 
 // From the README: 
 
 // GET /notes shoudl return the notes.html file
+app.get('/notes',(req,res)=>{
+    res.sendFile(path.join(__dirname,'./notes.html'))
+})
+
 // GET * should return the index.html file
+app.get('*',(req,res)=>{
+    res.sendFile(path.join(__dirname,'./index.html'))
+})
 
 // The following API routes should be created: 
 
