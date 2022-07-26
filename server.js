@@ -21,14 +21,26 @@ app.use(express.static('public'));
 // GET /notes shoudl return the notes.html file
 app.get('/notes',(req,res)=>{
     res.sendFile(path.join(__dirname,'./notes.html'))
-})
+});
 
 // GET * should return the index.html file
 app.get('*',(req,res)=>{
     res.sendFile(path.join(__dirname,'./index.html'))
-})
+});
 
 // The following API routes should be created: 
 
 // GET /api/notes should read the db.json file and return all  saved notes as JSON
+app.get('/api/notes', (req,res)=>{
+    res.readFile(path.join(__dirname,'./db.json'));
+    return (JSON.parse('./db.json'))
+});
+
 // POST /api/notes should rec a new note to save on the req body, add to the db.json file, and return the new note to client ***each note needs a unique id when saved (there are npm pkgs for this??)
+
+
+
+// boilerplate listener?? LOl we added stuff and it does NOT work 
+app.listen(PORT, () =>
+  console.log(`Example app listening at http://localhost:${PORT}/note-taker/develop/public/index.html`)
+);
