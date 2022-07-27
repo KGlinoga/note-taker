@@ -9,7 +9,7 @@ const app = express();
 // I think this links the file where we save new notes
 // const notes = require('./Develop/db/db.json');
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3000;
 
 // based on folder 22 comments. not sure if these 2 are necessary for note taker.. seems like boilerplate
 app.use(express.json());
