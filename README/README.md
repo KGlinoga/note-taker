@@ -19,7 +19,9 @@
 
 ## Usage
 
-  Simply visit http://localhost:3001 through your browser and type and save your first note!  Revisit the notes later by clicking on the list on the left.
+ Clone the repo and run "npm i", then "npm start".  The app should then deploy to your local host port 3001.
+
+Then, visit http://localhost:3001 through your browser and type and save your first note!  Revisit the notes later by clicking on the list on the left.
 
   ##Screenshots of Usage:
 
